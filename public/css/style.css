@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg-primary: #060913;
+  --bg-secondary: #0c1222;
+  --bg-card: rgba(14, 23, 42, 0.75);
+  --border-subtle: rgba(0, 240, 255, 0.15);
+  --accent-cyan: #00f0ff;
+  --accent-magenta: #ff0077;
+  --accent-emerald: #00ff88;
+  --accent-purple: #9d4edd;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090e1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+
+/* Efeito Glassmorphism Cyber */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-glow {
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.12);
+}
+
+/* Tipografia Mono para Métricas de Telemetria */
+.font-mono-telemetry {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Animação de Pulsação de Alvo de Calibração */
+@keyframes pulseTarget {
+  0% {
+    transform: translate(-50%, -50%) scale(0.85);
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: 0 0 30px 10px rgba(0, 240, 255, 0.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.85);
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+  }
+}
+
+.animate-pulse-target {
+  animation: pulseTarget 1.4s infinite ease-in-out;
+}
+
+/* Linha de Varredura Biométrica (Scanline) */
+@keyframes scanline {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.scanline-overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.8), transparent);
+  animation: scanline 2.8s linear infinite;
+  pointer-events: none;
+}
+
+/* Botões com Glow Neon */
+.btn-neon-cyan {
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  color: #00f0ff;
+  transition: all 0.2s ease-in-out;
+}
+.btn-neon-cyan:hover {
+  background: rgba(0, 240, 255, 0.25);
+  border-color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.btn-neon-magenta {
+  background: rgba(255, 0, 119, 0.1);
+  border: 1px solid rgba(255, 0, 119, 0.5);
+  color: #ff0077;
+  transition: all 0.2s ease-in-out;
+}
+.btn-neon-magenta:hover {
+  background: rgba(255, 0, 119, 0.25);
+  border-color: #ff0077;
+  box-shadow: 0 0 15px rgba(255, 0, 119, 0.4);
+}
+
+/* Grid de Fundo */
+.cyber-bg-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
